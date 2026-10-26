@@ -1,4 +1,4 @@
-package uz.heeypay.ecom.persistence;
+package uz.khakimjanovich.platform.persistence;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Proxy;

@@ -1,4 +1,4 @@
-package uz.heeypay.ecom.persistence.c;
+package uz.khakimjanovich.platform.persistence.c;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
