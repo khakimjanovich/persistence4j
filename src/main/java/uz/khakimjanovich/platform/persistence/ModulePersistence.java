@@ -1,4 +1,4 @@
-package uz.heeypay.ecom.persistence;
+package uz.khakimjanovich.platform.persistence;
 
 import com.zaxxer.hikari.HikariDataSource;
 import jakarta.persistence.EntityManagerFactory;

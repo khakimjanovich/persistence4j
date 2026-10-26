@@ -1,4 +1,4 @@
-package uz.heeypay.ecom.persistence;
+package uz.khakimjanovich.platform.persistence;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;

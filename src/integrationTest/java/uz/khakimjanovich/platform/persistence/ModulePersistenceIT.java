@@ -1,4 +1,4 @@
-package uz.heeypay.ecom.persistence;
+package uz.khakimjanovich.platform.persistence;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -89,7 +89,7 @@ class ModulePersistenceIT {
     LocalContainerEntityManagerFactoryBean aEntityManagerFactory(
         CountingDataSource aCounting, @Qualifier("aLiquibase") SpringLiquibase migrationsFirst) {
       return ModulePersistence.entityManagerFactory(
-          "a", uz.heeypay.ecom.persistence.a.Note.class, aCounting.dataSource);
+          "a", uz.khakimjanovich.platform.persistence.a.Note.class, aCounting.dataSource);
     }
   }
 
@@ -117,7 +117,7 @@ class ModulePersistenceIT {
         @Qualifier("bDataSource") DataSource dataSource,
         @Qualifier("bLiquibase") SpringLiquibase migrationsFirst) {
       return ModulePersistence.entityManagerFactory(
-          "b", uz.heeypay.ecom.persistence.b.Note.class, dataSource);
+          "b", uz.khakimjanovich.platform.persistence.b.Note.class, dataSource);
     }
   }
 
@@ -147,7 +147,7 @@ class ModulePersistenceIT {
         @Qualifier("cDataSource") DataSource dataSource,
         @Qualifier("cLiquibase") SpringLiquibase migrationsFirst) {
       return ModulePersistence.entityManagerFactory(
-          "c", uz.heeypay.ecom.persistence.c.Note.class, dataSource);
+          "c", uz.khakimjanovich.platform.persistence.c.Note.class, dataSource);
     }
   }
 
@@ -231,7 +231,7 @@ class ModulePersistenceIT {
     var entities = aEntities.createEntityManager();
     entities.getTransaction().begin();
     for (long i = 1; i <= 50; i++) {
-      var note = new uz.heeypay.ecom.persistence.a.Note();
+      var note = new uz.khakimjanovich.platform.persistence.a.Note();
       note.id = 1000 + i;
       note.text = "note " + i;
       entities.persist(note);
@@ -247,13 +247,13 @@ class ModulePersistenceIT {
     var written = OffsetDateTime.of(2026, 10, 21, 15, 30, 0, 0, ZoneOffset.ofHours(5));
     var entities = aEntities.createEntityManager();
     entities.getTransaction().begin();
-    var note = new uz.heeypay.ecom.persistence.a.Note();
+    var note = new uz.khakimjanovich.platform.persistence.a.Note();
     note.id = 1L;
     note.writtenAt = written;
     entities.persist(note);
     entities.getTransaction().commit();
     entities.clear();
-    var read = entities.find(uz.heeypay.ecom.persistence.a.Note.class, 1L).writtenAt;
+    var read = entities.find(uz.khakimjanovich.platform.persistence.a.Note.class, 1L).writtenAt;
     entities.close();
     assertThat(read.getOffset()).isEqualTo(ZoneOffset.UTC);
     assertThat(read.toInstant()).isEqualTo(written.toInstant());

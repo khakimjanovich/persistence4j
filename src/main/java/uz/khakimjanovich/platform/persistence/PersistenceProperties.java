@@ -1,4 +1,4 @@
-package uz.heeypay.ecom.persistence;
+package uz.khakimjanovich.platform.persistence;
 
 import java.util.Map;
 import org.springframework.boot.context.properties.ConfigurationProperties;
