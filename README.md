@@ -1,4 +1,4 @@
-# persistence
+# persistence4j
 
 What every module needs to own its data: its own connection pool, migrations, entity manager and
 transactions, connecting as its own database user, which sees only its own schema. Liquibase keeps
