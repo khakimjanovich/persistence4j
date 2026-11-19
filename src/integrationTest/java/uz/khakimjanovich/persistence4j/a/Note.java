@@ -1,4 +1,4 @@
-package uz.khakimjanovich.platform.persistence.a;
+package uz.khakimjanovich.persistence4j.a;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

@@ -1,4 +1,4 @@
-package uz.khakimjanovich.platform.persistence;
+package uz.khakimjanovich.persistence4j;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

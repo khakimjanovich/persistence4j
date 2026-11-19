@@ -1,4 +1,4 @@
-package uz.khakimjanovich.platform.persistence;
+package uz.khakimjanovich.persistence4j;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Proxy;

@@ -1,4 +1,4 @@
-package uz.khakimjanovich.platform.persistence;
+package uz.khakimjanovich.persistence4j;
 
 import com.zaxxer.hikari.HikariDataSource;
 import java.util.Objects;

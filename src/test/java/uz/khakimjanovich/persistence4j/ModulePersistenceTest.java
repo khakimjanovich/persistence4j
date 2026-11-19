@@ -1,4 +1,4 @@
-package uz.khakimjanovich.platform.persistence;
+package uz.khakimjanovich.persistence4j;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -131,9 +131,9 @@ class ModulePersistenceTest {
     new ApplicationContextRunner()
         .withConfiguration(AutoConfigurations.of(PersistenceAutoConfiguration.class))
         .withPropertyValues(
-            "platform.persistence.jpa.properties[hibernate.jdbc.batch_size]=50",
-            "platform.persistence.jpa.properties[hibernate.generate_statistics]=true",
-            "platform.persistence.liquibase.enabled=false")
+            "persistence4j.jpa.properties[hibernate.jdbc.batch_size]=50",
+            "persistence4j.jpa.properties[hibernate.generate_statistics]=true",
+            "persistence4j.liquibase.enabled=false")
         .run(
             context -> {
               var postProcessor =
