@@ -1,8 +1,8 @@
 // What every module needs to own its data: its own connection pool, migrations, entity manager and
 // transactions, connecting as its own database user to its own schema.
 plugins {
-    alias(libs.plugins.platform.library)
-    alias(libs.plugins.platform.integration.test)
+    alias(libs.plugins.conventions.library)
+    alias(libs.plugins.conventions.integration.test)
 }
 
 dependencies {
