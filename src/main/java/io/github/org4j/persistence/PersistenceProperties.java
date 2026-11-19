@@ -1,4 +1,4 @@
-package uz.khakimjanovich.persistence4j;
+package io.github.org4j.persistence;
 
 import java.util.Map;
 import org.springframework.boot.context.properties.ConfigurationProperties;

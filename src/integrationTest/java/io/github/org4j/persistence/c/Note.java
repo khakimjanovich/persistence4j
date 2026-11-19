@@ -1,4 +1,4 @@
-package uz.khakimjanovich.persistence4j.b;
+package io.github.org4j.persistence.c;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -7,4 +7,5 @@ import jakarta.persistence.Id;
 public class Note {
   @Id Long id;
   String text;
+  String author;
 }

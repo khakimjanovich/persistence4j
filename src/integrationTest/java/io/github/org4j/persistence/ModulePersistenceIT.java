@@ -1,4 +1,4 @@
-package uz.khakimjanovich.persistence4j;
+package io.github.org4j.persistence;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -84,7 +84,7 @@ class ModulePersistenceIT {
     LocalContainerEntityManagerFactoryBean aEntityManagerFactory(
         CountingDataSource aCounting, @Qualifier("aLiquibase") SpringLiquibase migrationsFirst) {
       return ModulePersistence.entityManagerFactory(
-          "a", uz.khakimjanovich.persistence4j.a.Note.class, aCounting.dataSource);
+          "a", io.github.org4j.persistence.a.Note.class, aCounting.dataSource);
     }
   }
 
@@ -93,7 +93,7 @@ class ModulePersistenceIT {
       schema = "b",
       prefix = "app.db.b",
       changelog = "db/b/changelog.yaml",
-      entities = uz.khakimjanovich.persistence4j.b.Note.class)
+      entities = io.github.org4j.persistence.b.Note.class)
   static class ModuleB {}
 
   @Configuration(proxyBeanMethods = false)
@@ -121,7 +121,7 @@ class ModulePersistenceIT {
         @Qualifier("cDataSource") DataSource dataSource,
         @Qualifier("cLiquibase") SpringLiquibase migrationsFirst) {
       return ModulePersistence.entityManagerFactory(
-          "c", uz.khakimjanovich.persistence4j.c.Note.class, dataSource);
+          "c", io.github.org4j.persistence.c.Note.class, dataSource);
     }
   }
 
@@ -218,7 +218,7 @@ class ModulePersistenceIT {
     var entities = aEntities.createEntityManager();
     entities.getTransaction().begin();
     for (long i = 1; i <= 50; i++) {
-      var note = new uz.khakimjanovich.persistence4j.a.Note();
+      var note = new io.github.org4j.persistence.a.Note();
       note.id = 1000 + i;
       note.text = "note " + i;
       entities.persist(note);
@@ -234,13 +234,13 @@ class ModulePersistenceIT {
     var written = OffsetDateTime.of(2026, 10, 21, 15, 30, 0, 0, ZoneOffset.ofHours(5));
     var entities = aEntities.createEntityManager();
     entities.getTransaction().begin();
-    var note = new uz.khakimjanovich.persistence4j.a.Note();
+    var note = new io.github.org4j.persistence.a.Note();
     note.id = 1L;
     note.writtenAt = written;
     entities.persist(note);
     entities.getTransaction().commit();
     entities.clear();
-    var read = entities.find(uz.khakimjanovich.persistence4j.a.Note.class, 1L).writtenAt;
+    var read = entities.find(io.github.org4j.persistence.a.Note.class, 1L).writtenAt;
     entities.close();
     assertThat(read.getOffset()).isEqualTo(ZoneOffset.UTC);
     assertThat(read.toInstant()).isEqualTo(written.toInstant());
@@ -255,7 +255,7 @@ class ModulePersistenceIT {
                 "app.db.d.url=" + POSTGRES.getJdbcUrl(),
                 "app.db.d.username=d_user",
                 "app.db.d.password=test",
-                "persistence4j.liquibase.enabled=false")
+                "org4j.persistence.liquibase.enabled=false")
             .run()) {
       var tables =
           new JdbcTemplate(context.getBean("dDataSource", DataSource.class))

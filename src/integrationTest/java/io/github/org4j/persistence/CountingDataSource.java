@@ -1,4 +1,4 @@
-package uz.khakimjanovich.persistence4j;
+package io.github.org4j.persistence;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Proxy;

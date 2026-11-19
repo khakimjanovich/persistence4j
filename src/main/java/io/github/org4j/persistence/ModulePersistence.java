@@ -1,4 +1,4 @@
-package uz.khakimjanovich.persistence4j;
+package io.github.org4j.persistence;
 
 import com.zaxxer.hikari.HikariDataSource;
 import jakarta.persistence.EntityManagerFactory;
