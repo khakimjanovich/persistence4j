@@ -1,4 +1,4 @@
 @NullMarked
-package uz.khakimjanovich.persistence4j;
+package io.github.org4j.persistence;
 
 import org.jspecify.annotations.NullMarked;

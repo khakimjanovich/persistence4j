@@ -1,4 +1,4 @@
-package uz.khakimjanovich.persistence4j.a;
+package io.github.org4j.persistence.a;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

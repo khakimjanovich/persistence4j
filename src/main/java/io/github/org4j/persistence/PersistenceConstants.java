@@ -1,11 +1,11 @@
-package uz.khakimjanovich.persistence4j;
+package io.github.org4j.persistence;
 
 import lombok.experimental.UtilityClass;
 
 @UtilityClass
 public class PersistenceConstants {
 
-  public static final String PROPERTIES_PREFIX = "persistence4j";
+  public static final String PROPERTIES_PREFIX = "org4j.persistence";
 
   public static final String HIKARI_SUFFIX = ".hikari";
 
